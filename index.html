@@ -3,33 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Redacted Chapter — Legal</title>
+<title>Auto-Tube &mdash; Redacted Chapter</title>
+<meta name="description" content="Content automation tool for the Redacted Chapter YouTube channel. Publishes investigative business documentaries to YouTube and short-form vertical content to TikTok and YouTube Shorts.">
 <style>
   :root { color-scheme: light dark; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    max-width: 680px;
-    margin: 4rem auto;
+    max-width: 760px;
+    margin: 3rem auto 5rem;
     padding: 0 1.5rem;
-    line-height: 1.6;
+    line-height: 1.65;
   }
-  h1 { font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
-  p.muted { color: #666; margin-top: 0; }
-  ul { list-style: none; padding: 0; }
-  li { margin: 0.5rem 0; }
+  h1 { font-weight: 600; letter-spacing: -0.015em; margin-bottom: 0.25rem; }
+  h2 { margin-top: 2.5rem; font-weight: 600; font-size: 1.2rem; }
+  p.tagline { color: #666; margin-top: 0; font-size: 1.05rem; }
   a { color: inherit; }
-  .updated { color: #888; font-size: 0.9rem; margin-top: 3rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.45rem 0; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 3rem 0; }
+  .footer { color: #888; font-size: 0.92rem; }
+  code {
+    background: rgba(127,127,127,0.12);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.92em;
+  }
 </style>
 </head>
 <body>
-<h1>Redacted Chapter</h1>
-<p class="muted">Investigative business documentaries. Legal documents below.</p>
 
+<h1>Auto-Tube</h1>
+<p class="tagline">Content automation tool for the <strong>Redacted Chapter</strong> YouTube channel.</p>
+
+<h2>About Redacted Chapter</h2>
+<p>Redacted Chapter is an independent YouTube channel publishing long-form investigative documentaries about corporate failure, regulatory action, deception, and business collapse. Editorial standards favor primary sources (SEC filings, court records, archived journalism, earnings transcripts) over speculation. The tone is calm, evidence-based, and restrained &mdash; closer to MagnatesMedia or ColdFusion than typical commentary content.</p>
+
+<h2>About Auto-Tube</h2>
+<p>Auto-Tube is the internal automation system that researches, scripts, narrates, sources visuals, renders, and publishes Redacted Chapter episodes and short-form derivatives. It is a single-user tool used only by the channel operator. There are no end-user accounts, no public-facing web interface beyond this page, and no audience access to the system itself.</p>
+
+<h2>How Auto-Tube uses platform APIs</h2>
+<ul>
+  <li><strong>YouTube Data API</strong> &mdash; uploads finished long-form documentaries (10&ndash;15 min) and vertical short-form clips (30&ndash;60 sec) to the operator's own YouTube channel as <em>Unlisted</em> by default. The operator manually flips visibility to Public.</li>
+  <li><strong>TikTok Content Posting API</strong> &mdash; uploads vertical short-form derivatives (30&ndash;60 sec, 1080&times;1920) to the operator's own TikTok account. Defaults to private (mutual-friend visibility) until the operator manually adjusts settings inside the TikTok app.</li>
+  <li><strong>Anthropic, ElevenLabs, Pexels, Pixabay, Tenor</strong> &mdash; used during production to generate scripts, narration, and sourced visuals. None of these post anything externally.</li>
+</ul>
+<p>Auto-Tube does not access viewer data, comments, or analytics from any platform. It only publishes content owned and authored by the channel operator.</p>
+
+<h2>Legal documents</h2>
 <ul>
   <li><a href="privacy-policy.html">Privacy Policy</a></li>
   <li><a href="terms-of-use.html">Terms of Use</a></li>
 </ul>
 
-<p class="updated">Operator: Arman &mdash; <a href="mailto:xxmenia@gmail.com">xxmenia@gmail.com</a></p>
+<h2>Contact</h2>
+<p>Operator: Arman &middot; <a href="mailto:xxmenia@gmail.com">xxmenia@gmail.com</a></p>
+
+<hr>
+<p class="footer">This page exists to satisfy the official-website disclosure requirements of third-party developer platforms (TikTok Content Posting API, YouTube Data API, and similar). Auto-Tube is a personal-use content automation tool. It is not offered as a service to third parties.</p>
+
 </body>
 </html>
