@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy &mdash; Redacted Chapter</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 760px;
+    margin: 3rem auto 5rem;
+    padding: 0 1.5rem;
+    line-height: 1.65;
+  }
+  h1 { font-weight: 600; letter-spacing: -0.01em; }
+  h2 { margin-top: 2.5rem; font-weight: 600; }
+  h3 { margin-top: 1.5rem; font-weight: 600; font-size: 1.05rem; }
+  .meta { color: #666; font-size: 0.92rem; margin-top: -0.5rem; margin-bottom: 2.5rem; }
+  a { color: inherit; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.35rem 0; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 3rem 0; }
+  .nav { font-size: 0.92rem; }
+</style>
+</head>
+<body>
+
+<p class="nav"><a href="./">&larr; Back</a></p>
+
+<h1>Privacy Policy</h1>
+<p class="meta">Effective date: May 29, 2026 &middot; Last updated: May 29, 2026</p>
+
+<h2>1. Overview</h2>
+<p>This Privacy Policy explains what data is collected and how it is handled by the content automation tool ("Auto-Tube") operated by Arman ("we," "us," "operator") in the production of the YouTube channel <strong>Redacted Chapter</strong> ("the Channel"). Auto-Tube is a personal-use tool, not a public service. It does not have user accounts and does not serve any audience other than the operator.</p>
+
+<p>If you are a viewer of Redacted Chapter content on YouTube, TikTok, or any other platform, that viewing relationship is governed by the privacy policies of those platforms, not by this document.</p>
+
+<h2>2. Who this policy is for</h2>
+<p>This policy is provided to satisfy the disclosure requirements of third-party developer platforms (YouTube Data API, TikTok Content Posting API, Anthropic API, ElevenLabs API, and similar) whose terms require operators of integrating applications to publish a privacy policy. It also serves as a transparency statement for anyone who wants to understand how the Channel is produced.</p>
+
+<h2>3. What data we collect</h2>
+
+<h3>3.1 OAuth credentials (operator only)</h3>
+<p>To publish to YouTube and TikTok on behalf of the Channel owner, Auto-Tube stores OAuth refresh tokens issued by those platforms. These tokens are:</p>
+<ul>
+  <li>Stored locally in a PostgreSQL database on operator-controlled infrastructure.</li>
+  <li>Encrypted at rest using application-level symmetric encryption (Fernet / AES-128-GCM).</li>
+  <li>Used solely to authenticate uploads to the operator's own channel and account.</li>
+  <li>Never transmitted to any third party other than the platform that issued them.</li>
+</ul>
+
+<h3>3.2 Cached API responses</h3>
+<p>Auto-Tube caches responses from the APIs it consumes (research sources, stock-media APIs, text-to-speech provider, LLM provider) to avoid redundant calls. These caches are stored locally and contain only the API's response data &mdash; not personal data about end users of the Channel.</p>
+
+<h3>3.3 Operational logs</h3>
+<p>Auto-Tube writes structured application logs for debugging. Logs do not include OAuth tokens, API keys, or personally identifiable information. Logs are retained on operator-controlled infrastructure only.</p>
+
+<h3>3.4 What we do NOT collect</h3>
+<ul>
+  <li>We do not collect, store, or process any data about viewers of the Channel.</li>
+  <li>We do not use cookies, analytics SDKs, or trackers on any Auto-Tube interface (Auto-Tube has no public web interface).</li>
+  <li>We do not collect information from third parties about the operator beyond what the platform OAuth flows return.</li>
+  <li>We do not knowingly collect information from children under 13.</li>
+</ul>
+
+<h2>4. Third-party services used in production</h2>
+<p>To produce Channel content, Auto-Tube makes API calls to the following third parties. Each operates under its own privacy policy:</p>
+<ul>
+  <li><strong>Anthropic</strong> &mdash; LLM script generation (claude.com)</li>
+  <li><strong>ElevenLabs</strong> &mdash; text-to-speech narration (elevenlabs.io)</li>
+  <li><strong>YouTube Data API</strong> &mdash; video upload + metadata (google.com)</li>
+  <li><strong>TikTok Content Posting API</strong> &mdash; vertical-short upload (tiktok.com)</li>
+  <li><strong>Pexels, Pixabay, Tenor</strong> &mdash; licensed stock and reference media</li>
+  <li><strong>Public-record sources</strong> &mdash; SEC EDGAR, court records, archived news (where lawful)</li>
+</ul>
+<p>Auto-Tube sends only the data each API requires to perform its function (e.g., narration text to ElevenLabs, video file + metadata to YouTube). It does not share OAuth tokens, API keys, or operator identity across services.</p>
+
+<h2>5. How long we keep data</h2>
+<ul>
+  <li><strong>OAuth tokens:</strong> kept until the operator revokes them via the issuing platform or deletes the local database row.</li>
+  <li><strong>Cached API responses:</strong> kept until manually pruned or the underlying source ages out (typically 7&ndash;90 days).</li>
+  <li><strong>Application logs:</strong> rotated on operator-controlled infrastructure; not exported.</li>
+</ul>
+
+<h2>6. Data sharing and disclosure</h2>
+<p>We do not sell, rent, or share data with third parties beyond what is necessary to publish Channel content via the platform APIs listed in Section 4. We do not run advertising and do not participate in ad networks.</p>
+<p>We will disclose information only if required by a valid legal process (subpoena, court order) and only to the extent required by that process.</p>
+
+<h2>7. Your rights</h2>
+<p>Because Auto-Tube does not collect viewer data, end-user rights requests do not apply to this tool directly. Viewer rights regarding YouTube, TikTok, and other platforms are governed by those platforms' privacy policies.</p>
+<p>The operator can at any time revoke OAuth grants in the YouTube ("Apps with access to your account") or TikTok ("Manage app permissions") settings; doing so immediately invalidates the stored refresh token.</p>
+
+<h2>8. Security</h2>
+<p>Auto-Tube runs on operator-controlled infrastructure. OAuth tokens are encrypted at rest. API keys are stored only in environment variables and never logged. No production credentials are checked into source control. The operator is the sole user of the system.</p>
+
+<h2>9. International users</h2>
+<p>Auto-Tube does not process viewer data, so cross-border data transfer rules (GDPR, UK GDPR, CCPA, etc.) do not apply at the tool level. Cross-border behavior of YouTube, TikTok, and other platforms is governed by their respective policies.</p>
+
+<h2>10. Children's privacy</h2>
+<p>Auto-Tube has no user accounts and does not collect data from viewers, including minors. The Redacted Chapter Channel is not directed at children under 13. Content is investigative business journalism intended for general adult audiences.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>We may update this policy. Any change will be reflected in the "Last updated" date at the top of this document. Material changes that affect how the operator's data is handled will be reflected in a new effective date.</p>
+
+<h2>12. Contact</h2>
+<p>For questions about this Privacy Policy or about Auto-Tube's data handling, contact:</p>
+<p><a href="mailto:xxmenia@gmail.com">xxmenia@gmail.com</a></p>
+
+<hr>
+<p class="nav"><a href="./">&larr; Back</a> &middot; <a href="terms-of-use.html">Terms of Use</a></p>
+
+</body>
+</html>
